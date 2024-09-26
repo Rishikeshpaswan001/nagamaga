@@ -100,6 +100,19 @@ h1 {
     color: #ffcc00;
 }
 
+/* Ad styles */
+#ad-placeholder {
+    width: 100%; /* Full width for the ad */
+    height: 100px; /* Height of the ad */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px dashed #ffcc00;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffcc00;
+}
+
 /* Click effect styles */
 @keyframes clickEffect {
     0% { transform: scale(1); opacity: 1; }
