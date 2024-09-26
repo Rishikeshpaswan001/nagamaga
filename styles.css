@@ -1,0 +1,112 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffcc00, #ff6699);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+#game {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+h1 {
+    font-size: 36px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#launch-message {
+    font-size: 26px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#launch-message .highlight {
+    font-weight: bold;
+    font-size: 30px;
+    color: #ffcc00;
+    margin-left: 5px;
+}
+
+#circle {
+    width: 220px; /* Adjust the size if necessary */
+    height: 220px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes it a circle */
+    border: 5px solid #ffcc00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: #34495e;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+    position: relative;
+    overflow: hidden; /* Prevent overflow of click effect */
+}
+
+#coin {
+    width: 100%; /* Makes the image take full width */
+    height: 100%; /* Makes the image take full height */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%; /* Rounds the corners to fit within the circle */
+    transition: transform 0.1s; /* Keeps the scaling animation for clicks */
+}
+
+#score {
+    font-size: 28px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden; /* Prevent overflow of the bar */
+    margin-top: 20px;
+}
+
+#progress-bar {
+    width: 0%; /* Start width of the progress bar */
+    height: 20px;
+    background-color: #ffcc00; /* Color of the progress */
+    transition: width 0.2s; /* Smooth transition for width change */
+}
+
+#coin-price {
+    font-size: 24px;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#coin-price .highlight {
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+/* Click effect styles */
+@keyframes clickEffect {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.click-effect {
+    animation: clickEffect 0.3s forwards;
+}
