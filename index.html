@@ -10,6 +10,7 @@
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
+            padding: 20px;
         }
         #coinDisplay {
             font-size: 24px;
@@ -21,8 +22,8 @@
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto;
-            position: relative;
             border: 5px solid #ffd700; /* Gold border */
+            position: relative;
             transition: transform 0.1s;
         }
         #circle img {
@@ -37,6 +38,18 @@
         #ad-container {
             margin-top: 20px;
         }
+        #progressBar {
+            width: 100%;
+            background-color: #555;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        #progress {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +63,10 @@
 
     <div id="launchInfo">Naga Maga will launch at <strong>$100,000</strong></div>
     
+    <div id="progressBar">
+        <div id="progress"></div>
+    </div>
+
     <div id="ad-container">
         <!-- Google AdSense Code -->
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9931123120552605" crossorigin="anonymous"></script>
@@ -70,6 +87,12 @@
         function mineCoin() {
             coinsMined++;
             document.getElementById('coinCount').innerText = coinsMined;
+
+            // Update progress bar
+            const progressBar = document.getElementById('progress');
+            const percentage = (coinsMined / 100) * 100; // Assuming max coins for full bar is 100
+            progressBar.style.width = percentage + '%';
+
             // Add click effect
             const circle = document.getElementById('circle');
             circle.style.transform = "scale(0.9)";
